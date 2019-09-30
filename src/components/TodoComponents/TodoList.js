@@ -18,14 +18,14 @@ export default class TodoList extends React.Component {
     }
     render (){
         return (
-            <div>{this.props.todos.map(item => (
-                <div>
+            <ul>{this.props.todos.map(item => (
+                <li>
                     <p className={'complete ' + (item.isCompleted? 'show' : 'hidden')}
                     key={item.name}
                     onClick={this.markComplete}
                     >{item.name}</p>
-                </div>
-            ))}</div>
+                </li>
+            ))}</ul>
         )
     }
 }

@@ -15,7 +15,6 @@ class TodoForm extends React.Component {
     }
 
     clearCompleted = event => {
-        debugger
         event.preventDefault();
         const newArr = this.props.todos.filter(element => {
             return element.isCompleted === false
@@ -27,6 +26,7 @@ class TodoForm extends React.Component {
         return (
             <form>
                 <input value={this.props.formValue} onChange={this.onChange} type='text' placeholder='...todo'/>
+                <br />
                 <button onClick={this.addTodo}>Add Todo</button>
                 <button onClick={this.clearCompleted}>Clear Completed</button>
             </form>

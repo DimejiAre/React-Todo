@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
+import './App.css';
 // import { tsImportEqualsDeclaration } from '@babel/types';
 
 class App extends React.Component {
@@ -42,7 +43,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='main-page'>
         <h2>Todo List</h2>
         <TodoList todos={this.state.todos}
         markComplete={this.markComplete}
