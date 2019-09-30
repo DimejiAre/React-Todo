@@ -4,8 +4,10 @@ class TodoForm extends React.Component {
 
     addTodo = event => {
         event.preventDefault();
-        this.props.setTodos(this.props.formValue)
-        this.setState({formValue: ''})
+        if(this.props.formValue){
+            this.props.setTodos(this.props.formValue)
+            this.props.setFormValue('')
+        }
     }
 
     onChange = event => {

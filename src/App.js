@@ -1,7 +1,7 @@
 import React from 'react';
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
-import { tsImportEqualsDeclaration } from '@babel/types';
+// import { tsImportEqualsDeclaration } from '@babel/types';
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -11,14 +11,20 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      todos: [{name: 'a'},{name: 'b'},{name: 'c'}],
+      todos: [{name: 'a', isCompleted: false}],
       formValue: '',
     }
   }
 
   setTodos = value => {
     this.setState(currentState => ({
-      todos: currentState.todos.concat({name: value})
+      todos: currentState.todos.concat({name: value, isCompleted: false})
+    }))
+  }
+
+  markComplete = arr => {
+    this.setState(currentState => ({
+      todos: arr
     }))
   }
 
@@ -28,11 +34,19 @@ class App extends React.Component {
     }))
   }
 
+  // clearCompleted = () => {
+  //   this.setState(currentState => ({
+      
+  //   }))
+  // }
+
   render() {
     return (
       <div>
         <h2>Todo List</h2>
-        <TodoList todos={this.state.todos}/>
+        <TodoList todos={this.state.todos}
+        markComplete={this.markComplete}
+        />
         <TodoForm formValue={this.state.formValue}
         todos={this.state.todos}
         setTodos={this.setTodos}
