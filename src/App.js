@@ -11,7 +11,7 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      todos: [{name: 'a', isCompleted: false}],
+      todos: [],
       formValue: '',
     }
   }
@@ -34,11 +34,11 @@ class App extends React.Component {
     }))
   }
 
-  // clearCompleted = () => {
-  //   this.setState(currentState => ({
-      
-  //   }))
-  // }
+  clearCompleted = arr => {
+    this.setState(currentState => ({
+      todos: arr
+    }))
+  }
 
   render() {
     return (
@@ -51,6 +51,7 @@ class App extends React.Component {
         todos={this.state.todos}
         setTodos={this.setTodos}
         setFormValue={this.setFormValue}
+        clearCompleted={this.clearCompleted}
         />
       </div>
     );

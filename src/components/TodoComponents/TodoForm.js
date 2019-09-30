@@ -14,6 +14,15 @@ class TodoForm extends React.Component {
         this.props.setFormValue(event.target.value)
     }
 
+    clearCompleted = event => {
+        debugger
+        event.preventDefault();
+        const newArr = this.props.todos.filter(element => {
+            return element.isCompleted === false
+        })
+        this.props.clearCompleted(newArr)
+    }
+
     render (){
         return (
             <form>
