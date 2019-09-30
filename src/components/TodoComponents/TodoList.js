@@ -7,6 +7,9 @@ export default class TodoList extends React.Component {
         const item = event.target.innerText;
         const newArr = this.props.todos.map(element => {
             if(element.name === item){
+                if(element.isCompleted === true){
+                    return {name: element.name, isCompleted: false}
+                }
                 return {name: element.name, isCompleted: true}
             }
             return element

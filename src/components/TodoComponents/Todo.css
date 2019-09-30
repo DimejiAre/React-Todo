@@ -1,3 +1,6 @@
 .complete.show{
     text-decoration: line-through;
 }
+.complete.hidden{
+    text-decoration: initial;
+}
