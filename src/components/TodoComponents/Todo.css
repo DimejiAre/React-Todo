@@ -1,0 +1,23 @@
+ul {
+    padding-left: 20px;
+    margin: 5px 0;
+}
+
+li {
+    margin: 2px 0;
+}
+
+p {
+    margin: 5px 0;
+}
+
+.complete.show{
+    text-decoration: line-through;
+}
+.complete.hidden{
+    text-decoration: initial;
+}
+
+button {
+    margin: 10px 0;
+}
